@@ -4,10 +4,14 @@
 ![](https://img.shields.io/badge/license-MIT-green)
 ![](https://img.shields.io/github/stars/eccanto)
 
-Basic example of using Cucumber with Java (BDD). This `Gherkin` example includes:
+Basic example of using Cucumber and Selenium with Java (BDD). This `Gherkin` example includes:
 - Basic Scenario
 - Scenario Outline
 - Tagged tests
+
+# Tested Scenarios
+
+**WIP**
 
 # Table of contents
 
@@ -66,8 +70,8 @@ mvn test -Dcucumber.filter.tags="@smoke and @duckduckgo"
 
 #### Set up the Git hooks custom directory
 
-After cloning the repository run the following command in the repository root, this ensures that library tests are run
-before each push into the repository to maintain the quality of the project:
+After cloning the repository run the following command in the repository root, this ensures that static analysis tools
+are run before each push into the repository to maintain the quality of the project:
 
 ```bash
 git config core.hooksPath .githooks
