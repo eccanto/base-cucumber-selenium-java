@@ -18,7 +18,9 @@ public class SearchPage extends BasePage {
                 .until(
                         new ExpectedCondition<Boolean>() {
                             public Boolean apply(WebDriver driver) {
-                                final String content = driver.findElement(By.cssSelector(CSS_RESULT_SEARCH)).getText();
+                                final String content =
+                                        driver.findElement(By.cssSelector(CSS_RESULT_SEARCH))
+                                                .getText();
                                 return content.contains(text);
                             }
                         });
