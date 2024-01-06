@@ -7,8 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchPage extends BasePage {
-    private static final String XPATH_RESULT_SEARCH =
-            "//*[@id='react-layout']//section[@data-testid='mainline']";
+    private static final String CSS_RESULT_SEARCH = "#react-layout [data-testid='mainline']";
 
     public SearchPage(WebDriver driver) {
         super(driver);
@@ -19,8 +18,7 @@ public class SearchPage extends BasePage {
                 .until(
                         new ExpectedCondition<Boolean>() {
                             public Boolean apply(WebDriver driver) {
-                                final String content =
-                                        driver.findElement(By.xpath(XPATH_RESULT_SEARCH)).getText();
+                                final String content = driver.findElement(By.cssSelector(CSS_RESULT_SEARCH)).getText();
                                 return content.contains(text);
                             }
                         });

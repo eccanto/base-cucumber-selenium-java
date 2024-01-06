@@ -8,8 +8,7 @@ public class HomePage extends BasePage {
     private static final String BASE_URL = "https://duckduckgo.com/";
 
     private static final String CSS_INPUT_SEARCH = "#searchbox_input";
-    private static final String XPATH_BUTTON_SEARCH =
-            "//*[@id='searchbox_homepage']//button[@type='submit']";
+    private static final String CSS_BUTTON_SEARCH = "#searchbox_homepage button[type='submit']";
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -25,7 +24,7 @@ public class HomePage extends BasePage {
     }
 
     public void search() {
-        final WebElement button = driver.findElement(By.xpath(XPATH_BUTTON_SEARCH));
+        final WebElement button = driver.findElement(By.cssSelector(CSS_BUTTON_SEARCH));
         button.click();
     }
 }
